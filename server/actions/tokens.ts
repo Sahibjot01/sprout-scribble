@@ -13,7 +13,7 @@ import crypto from "crypto"
 export const getVerificationTokenByEmail = async (email: string) => {
   try {
     const verificationToken = await db.query.emailTokens.findFirst({
-      where: eq(emailTokens.token, email),
+      where: eq(emailTokens.email, email),
     })
     return verificationToken
   } catch (error) {
